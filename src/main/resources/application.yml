@@ -1,0 +1,10 @@
+spring:
+  #  mvc:
+  #    static-path-pattern: /img/**
+  #  resources:
+  #    static-locations: file:C://Users//deepg//Pictures
+  datasource:
+    url: jdbc:mysql://149.248.52.182:3306/testdb
+    username: admin
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
