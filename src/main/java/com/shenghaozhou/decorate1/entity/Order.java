@@ -1,5 +1,6 @@
 package com.shenghaozhou.decorate1.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ public class Order {
     private String customerName;
     private String phoneNumber;
     private String type;
+    @TableField(exist = false)
     private List<String> style;
     private String sStyle;
 
@@ -24,9 +26,6 @@ public class Order {
         this.phoneNumber = phoneNumber;
         this.type = type;
         this.style = style;
-        for (String s : style) {
-            this.sStyle = this.style + "," + s;
-        }
     }
 
     @Override
@@ -35,6 +34,14 @@ public class Order {
                 + "customerName: " + getCustomerName()
                 + "phoneNumber: " + getPhoneNumber()
                 + "type: " + getType()
-                + "style: " + getStyle();
+                + "style: " + getSStyle();
+    }
+
+    public void setSStyle() {
+        StringBuilder ssb = new StringBuilder();
+        for (String s : style) {
+            ssb.append(s);
+        }
+        this.sStyle = ssb.toString();
     }
 }

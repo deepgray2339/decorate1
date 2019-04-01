@@ -1,11 +1,9 @@
 package com.shenghaozhou.decorate1.entity;
 
-import lombok.Getter;
-import lombok.Setter;
 
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Designer {
     private Long id;
     private String name;
